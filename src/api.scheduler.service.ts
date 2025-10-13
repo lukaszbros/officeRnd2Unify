@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { Interval } from '@nestjs/schedule';
 import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
-import { getAccessToken } from './getAccessToken';
+import { OfficerndAuthService } from './auth.service';
 
 @Injectable()
 export class ApiSchedulerService {
@@ -12,28 +12,28 @@ export class ApiSchedulerService {
 
   private authToken: string | null = null;
 
-  constructor(private readonly http: HttpService) {
+  constructor(
+    private readonly http: HttpService,
+    private readonly officerndAuthService: OfficerndAuthService,
+  ) {
     this.logger.log('Scheduler started');
   }
 
   async onModuleInit() {
-    const token = await getAccessToken(this.http);
-    if (token) {
-      this.logger.log('Authenticated');
-      this.authToken = token;
-    }
+    await this.officerndAuthService.getToken();
   }
 
   @Interval(60000)
   async callExternalApi() {
     this.logger.log('Api called');
+    const token = await this.officerndAuthService.getToken();
     try {
       const response = await firstValueFrom(
         this.http.get(
           'https://app.officernd.com/api/v2/organizations/yolkkrakow/members',
           {
             headers: {
-              Authorization: `Bearer ${this.authToken}`,
+              Authorization: `Bearer ${token}`,
             },
           },
         ),
