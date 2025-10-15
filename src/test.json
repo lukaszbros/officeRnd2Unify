@@ -1,0 +1,807 @@
+{
+  "rangeStart": 1,
+  "rangeEnd": 50,
+  "cursorNext": "eyJrIjoiX2lkIiwicCI6NTAsInYiOiI2MjRhZDUyMzk1ZjY2NTI2MGU4YTFhZDkifQ",
+  "results": [
+    {
+      "properties": {
+        "Work Situation": ["#readytoinvest"],
+        "hubspot_sync_errors": [
+          "Contact already exists. Existing ID: 42739596337"
+        ],
+        "hubspot_link_id": null
+      },
+      "_id": "622b7419799a9c009b3266ec",
+      "name": "Max Burgess",
+      "email": "maxjunk@mac.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "622b7418799a9c853b3266ac",
+      "status": "active",
+      "startDate": "2025-10-13T00:00:00.000Z",
+      "createdAt": "2022-03-11T16:08:57.350Z",
+      "modifiedAt": "2025-10-12T18:27:12.786Z"
+    },
+    {
+      "properties": {
+        "hubspot_link_id": "7305841-162734694919"
+      },
+      "_id": "622ef6c5f50ae03b5da6bffc",
+      "name": "Michał Kus",
+      "email": "mehowkoosh@gmail.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": null,
+      "status": "contact",
+      "startDate": null,
+      "createdAt": "2022-03-14T08:03:17.086Z",
+      "modifiedAt": "2025-10-12T18:19:26.656Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 12,
+        "slack_id": "UU9F24NBT",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_sync_errors": ["Contact already exists. Existing ID: 953"]
+      },
+      "_id": "62319fb7aa4bdb1bd1a0cfee",
+      "name": "Thomas Bonneau",
+      "email": "tom@gbsterling.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "624317d00180516cf0e5c41f",
+      "status": "active",
+      "startDate": "2022-03-16T00:00:00.000Z",
+      "createdAt": "2022-03-16T08:28:39.808Z",
+      "modifiedAt": "2025-10-10T19:31:40.066Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 20,
+        "slack_id": "UV5S6T3MM",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_sync_errors": ["Contact already exists. Existing ID: 1101"]
+      },
+      "_id": "6231a80b6ef083b74917dd4b",
+      "name": "Nicholas Holden",
+      "email": "nick@native-speaker.biz",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "former",
+      "startDate": "2020-03-09T00:00:00.000Z",
+      "createdAt": "2022-03-16T09:04:11.985Z",
+      "modifiedAt": "2025-10-10T19:31:41.556Z"
+    },
+    {
+      "properties": {
+        "slack_invited": true,
+        "slack_id": "U03E2LSSNAD",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162738536578"
+      },
+      "_id": "624218b99de910e1a9f7ce69",
+      "name": "Zowie Contact & Billing",
+      "email": "finance@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-28T20:21:13.439Z",
+      "modifiedAt": "2025-10-10T19:33:55.545Z"
+    },
+    {
+      "properties": {
+        "slack_id": "U037BD50BFU",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162738536577"
+      },
+      "_id": "62421901cacff91d641b3442",
+      "name": "Volubus Contact & Billing",
+      "email": "billing@volubus.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62319d036ef08303b0177b6f",
+      "status": "former",
+      "createdAt": "2022-03-28T20:22:25.340Z",
+      "modifiedAt": "2025-10-10T19:33:55.454Z"
+    },
+    {
+      "properties": {
+        "slack_id": "U0312BZ4G8Z",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_sync_errors": ["Contact already exists. Existing ID: 434951"]
+      },
+      "_id": "6242194ecacff9434a1b3587",
+      "name": "Yuliia Shaladanova",
+      "email": "yulia@insart.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62309004be8934666112e6f0",
+      "status": "former",
+      "createdAt": "2022-03-28T20:23:42.421Z",
+      "modifiedAt": "2025-10-10T19:31:45.147Z"
+    },
+    {
+      "properties": {
+        "slack_id": "U0315STME5N",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162799367814"
+      },
+      "_id": "624219839de910cb95f7d185",
+      "name": "Loóna Contact & Billing",
+      "email": "markitantova@loona.app",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "623072452a7bd104ee6f1fd5",
+      "status": "former",
+      "createdAt": "2022-03-28T20:24:35.404Z",
+      "modifiedAt": "2025-10-10T19:33:55.550Z"
+    },
+    {
+      "properties": {
+        "slack_id": "U02A1KNBBMK",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162799367815"
+      },
+      "_id": "624219f5cacff933bc1b39e2",
+      "name": "Jam Contact & Billing",
+      "email": "i@jam.dev",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "623de7cdf710956a85e9cfc7",
+      "status": "former",
+      "createdAt": "2022-03-28T20:26:29.482Z",
+      "modifiedAt": "2025-10-10T19:33:55.475Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 421,
+        "slack_invited": true,
+        "slack_id": "U038W0LB37W",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162795447898"
+      },
+      "_id": "624317d00180514a44e5c362",
+      "name": "Nataliia Combellick",
+      "email": "suprunka3003@gmail.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "623c544e2b68ccbef238f52a",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:36.256Z",
+      "modifiedAt": "2025-10-10T19:33:55.471Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 342,
+        "slack_id": "U030G7M1003",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162795447899"
+      },
+      "_id": "624317d10180510745e5c4d3",
+      "name": "Anastasiya Yaskevich",
+      "email": "yaskevich@loona.app",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "623072452a7bd104ee6f1fd5",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:37.451Z",
+      "modifiedAt": "2025-10-10T19:33:55.467Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 344,
+        "slack_id": "U0316304G00",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162795447900"
+      },
+      "_id": "624317d10180513679e5c4b9",
+      "name": "Olga Bubentsova",
+      "email": "o.bubentsova@loona.app",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "623072452a7bd104ee6f1fd5",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:37.380Z",
+      "modifiedAt": "2025-10-10T19:33:55.480Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 345,
+        "slack_id": "U0301KTSQB1",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162799367821"
+      },
+      "_id": "624317d10180515004e5c4c6",
+      "name": "Bogdan Borisevich",
+      "email": "borisevich@loona.app",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "623072452a7bd104ee6f1fd5",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:37.415Z",
+      "modifiedAt": "2025-10-10T19:33:55.484Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 343,
+        "slack_id": "U030G7XVAD9",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162799367822"
+      },
+      "_id": "624317d1018051543de5c49f",
+      "name": "Zhenya V.",
+      "email": "vasiutsinski@loona.app",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "623072452a7bd104ee6f1fd5",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:37.292Z",
+      "modifiedAt": "2025-10-10T19:33:55.488Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 347,
+        "slack_id": "U0301M8VCKZ",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162799367823"
+      },
+      "_id": "624317d10180519821e5c4ac",
+      "name": "Pasha",
+      "email": "glebov@loona.app",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "623072452a7bd104ee6f1fd5",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:37.333Z",
+      "modifiedAt": "2025-10-10T19:33:55.463Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 346,
+        "slack_id": "U030GA3TP5H",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162795968533"
+      },
+      "_id": "624317d1018051b809e5c4e0",
+      "name": "Tanya",
+      "email": "ardytskaya@loona.app",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "623072452a7bd104ee6f1fd5",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:37.501Z",
+      "modifiedAt": "2025-10-10T19:33:55.564Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 412,
+        "slack_id": "U0395070GH0",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162690121522"
+      },
+      "_id": "624317d1018051f119e5c506",
+      "name": "Anca Secu",
+      "email": "anca.secu@man.digital",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "624317d10180515d26e5c4fe",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:37.602Z",
+      "modifiedAt": "2025-10-10T19:33:55.569Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 271,
+        "slack_id": "U02K0N0HLMA",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_sync_errors": ["Contact already exists. Existing ID: 337701"]
+      },
+      "_id": "624317d20180510bcae5c60e",
+      "name": "Max Dowsing",
+      "email": "max@volubus.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62319d036ef08303b0177b6f",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.192Z",
+      "modifiedAt": "2025-10-10T19:31:55.078Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 133,
+        "slack_id": "U023FJD5BRT",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162800103599"
+      },
+      "_id": "624317d20180510db9e5c6a3",
+      "name": "Krystian Prorok",
+      "email": "krystian.prorok@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.593Z",
+      "modifiedAt": "2025-10-10T19:33:55.579Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 430,
+        "slack_id": "U038NH4QDRD",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162800103598"
+      },
+      "_id": "624317d20180510f5ce5c5ee",
+      "name": "Valentyna Ilyina",
+      "email": "valentyna@volubus.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62319d036ef08303b0177b6f",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.127Z",
+      "modifiedAt": "2025-10-10T19:33:55.657Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 326,
+        "slack_id": "U02SK305536",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162800103597"
+      },
+      "_id": "624317d20180511454e5c6bd",
+      "name": "Weronika Bielecka",
+      "email": "weronika.bielecka@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.652Z",
+      "modifiedAt": "2025-10-10T19:33:55.648Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 325,
+        "slack_id": "U02SA3WC0UE",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162800103601"
+      },
+      "_id": "624317d20180512268e5c648",
+      "name": "Patrycja Krok",
+      "email": "patrycja.krok@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.338Z",
+      "modifiedAt": "2025-10-10T19:33:55.653Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 182,
+        "slack_id": "U02AYCSKGL9",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162800103602"
+      },
+      "_id": "624317d20180512399e5c62b",
+      "name": "Paweł Falisz",
+      "email": "pawel@jam.dev",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "623de7cdf710956a85e9cfc7",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.270Z",
+      "modifiedAt": "2025-10-10T19:33:55.588Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 339,
+        "slack_id": "U021XCCM91D",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162800103600"
+      },
+      "_id": "624317d2018051282ae5c6fa",
+      "name": "Błażej Biesiada",
+      "email": "blazej@biesiada.net.pl",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "active",
+      "startDate": null,
+      "createdAt": "2022-03-29T14:29:38.938Z",
+      "modifiedAt": "2025-10-12T18:19:41.467Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 37,
+        "slack_invited": true,
+        "slack_id": "U03E2LSSM09",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162800103603"
+      },
+      "_id": "624317d20180512844e5c689",
+      "name": "Łukasz Kaźmierczak",
+      "email": "lukasz.kazmierczak@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.533Z",
+      "modifiedAt": "2025-10-10T19:33:55.584Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 360,
+        "slack_id": "U031NF7994P",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162798889993"
+      },
+      "_id": "624317d20180512ad4e5c5e1",
+      "name": "Aleksander Piotrowski",
+      "email": "aleksander@volubus.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62319d036ef08303b0177b6f",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.096Z",
+      "modifiedAt": "2025-10-10T19:33:55.670Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 327,
+        "slack_id": "U02SZFW6BCY",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162798889991"
+      },
+      "_id": "624317d20180513baee5c66f",
+      "name": "Wiktoria Polonska",
+      "email": "wiktoria.polonska@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.453Z",
+      "modifiedAt": "2025-10-10T19:33:55.661Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 134,
+        "slack_id": "U023JK595JP",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162798889992"
+      },
+      "_id": "624317d2018051418ee5c6e4",
+      "name": "Anna Łyczak",
+      "email": "anna.lyczak@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.885Z",
+      "modifiedAt": "2025-10-10T19:33:55.666Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 396,
+        "slack_id": "U035W5W1TAR",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162657298592"
+      },
+      "_id": "624317d20180514d8ae5c710",
+      "name": "René Kliment",
+      "email": "registrace.yolk@renekliment.cz",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "former",
+      "startDate": null,
+      "createdAt": "2022-03-29T14:29:38.997Z",
+      "modifiedAt": "2025-10-12T18:19:26.386Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 79,
+        "slack_id": "U01HNQJ5PSS",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162800037493"
+      },
+      "_id": "624317d20180515760e5c6d7",
+      "name": "Bartek Wilk",
+      "email": "bartosz.wilk@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.766Z",
+      "modifiedAt": "2025-10-10T19:33:55.679Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 101,
+        "slack_id": "U01TGE579UZ",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_sync_errors": ["Contact already exists. Existing ID: 210801"]
+      },
+      "_id": "624317d201805159eee5c6ef",
+      "name": "Richard Lucas",
+      "email": "richardlucas@richardlucas.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "active",
+      "startDate": "2021-04-01T00:00:00.000Z",
+      "createdAt": "2022-03-29T14:29:38.918Z",
+      "modifiedAt": "2025-10-10T19:32:04.406Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 330,
+        "slack_id": "U02SUKD1CKY",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162739174826"
+      },
+      "_id": "624317d20180515d6ce5c705",
+      "name": "Tomasz Zamkotowicz",
+      "email": "tzamkotowicz@gmail.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "former",
+      "startDate": null,
+      "createdAt": "2022-03-29T14:29:38.969Z",
+      "modifiedAt": "2025-10-12T18:19:26.681Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 297,
+        "slack_id": "U02MR025K0X",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162739174827"
+      },
+      "_id": "624317d201805178c5e5c601",
+      "name": "Gabriela Czechura",
+      "email": "gabriela@volubus.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62319d036ef08303b0177b6f",
+      "status": "active",
+      "createdAt": "2022-03-29T14:29:38.160Z",
+      "modifiedAt": "2025-10-10T19:33:55.762Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 38,
+        "slack_invited": true,
+        "slack_id": "U03D9DYJ7AB",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162739174829"
+      },
+      "_id": "624317d20180517c2ae5c6ca",
+      "name": "Jakub Darul",
+      "email": "jakub.darul@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.707Z",
+      "modifiedAt": "2025-10-10T19:33:55.745Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 296,
+        "slack_id": "U02Q3GSQ19N",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162739174828"
+      },
+      "_id": "624317d20180517df9e5c662",
+      "name": "Michał Partyka",
+      "email": "michal.partyka@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.410Z",
+      "modifiedAt": "2025-10-10T19:33:55.766Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 132,
+        "slack_id": "U024CDARJ9Z",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162739174830"
+      },
+      "_id": "624317d20180517f38e5c6b0",
+      "name": "Dawid Godek",
+      "email": "dawid.godek@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.623Z",
+      "modifiedAt": "2025-10-10T19:33:55.750Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 281,
+        "slack_id": "U02LCM27YSJ",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162739174831"
+      },
+      "_id": "624317d2018051b077e5c61b",
+      "name": "Mans Ruder",
+      "email": "mans@volubus.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62319d036ef08303b0177b6f",
+      "status": "active",
+      "createdAt": "2022-03-29T14:29:38.231Z",
+      "modifiedAt": "2025-10-10T19:33:55.688Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 354,
+        "slack_id": "U031TB8NSGY",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162798243108"
+      },
+      "_id": "624317d2018051b561e5c67c",
+      "name": "Kamil Bukowczyk",
+      "email": "kamil.bukowczyk@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.485Z",
+      "modifiedAt": "2025-10-10T19:33:55.779Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 224,
+        "slack_id": "U02N6RWE39D",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162798243110"
+      },
+      "_id": "624317d2018051cd7de5c655",
+      "name": "Przemysław Sobota",
+      "email": "przemyslaw.sobota@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.377Z",
+      "modifiedAt": "2025-10-10T19:33:55.774Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 411,
+        "slack_id": "U037YNKGL9J",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162798243109"
+      },
+      "_id": "624317d2018051e491e5c696",
+      "name": "Anna Potok",
+      "email": "anna.potok@zowie.ai",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "company": "62308ce5f71646668baefb1d",
+      "status": "former",
+      "createdAt": "2022-03-29T14:29:38.564Z",
+      "modifiedAt": "2025-10-10T19:33:55.782Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 372,
+        "slack_id": "U034B1AVBUH",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_sync_errors": ["Contact already exists. Existing ID: 247501"]
+      },
+      "_id": "624317d30180517ee2e5c71b",
+      "name": "Tanner Schrank",
+      "email": "schrank.tanner@gmail.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "former",
+      "startDate": "2022-02-18T00:00:00.000Z",
+      "createdAt": "2022-03-29T14:29:39.022Z",
+      "modifiedAt": "2025-10-10T19:32:10.097Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 47,
+        "slack_id": "U018H6QR4BH",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_sync_errors": ["Contact already exists. Existing ID: 88001"]
+      },
+      "_id": "624317d3018051eebfe5c726",
+      "name": "Michal Skawianczyk",
+      "email": "skawian@gmail.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "former",
+      "startDate": "2020-08-17T00:00:00.000Z",
+      "createdAt": "2022-03-29T14:29:39.051Z",
+      "modifiedAt": "2025-10-10T19:32:11.687Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 42,
+        "slack_id": "U017CQSLKGU",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162801465615"
+      },
+      "_id": "624ad52295f66542898a1ab8",
+      "name": "Daniel Di Giusto",
+      "email": "digiusto.daniel@gmail.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "active",
+      "startDate": null,
+      "createdAt": "2022-04-04T11:23:14.979Z",
+      "modifiedAt": "2025-10-12T18:19:41.699Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 25,
+        "slack_id": "U013U183SG5",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_sync_errors": ["Contact already exists. Existing ID: 601"]
+      },
+      "_id": "624ad52295f6657efa8a1aad",
+      "name": "Julio Fort",
+      "email": "juliocesarfort@gmail.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "active",
+      "startDate": "2020-06-01T00:00:00.000Z",
+      "createdAt": "2022-04-04T11:23:14.942Z",
+      "modifiedAt": "2025-10-10T19:32:15.163Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 269,
+        "slack_id": "U02J815P8Q3",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162720705328"
+      },
+      "_id": "624ad52295f6658f448a1aa2",
+      "name": "Binh Ho",
+      "email": "hello@13inh.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "former",
+      "startDate": null,
+      "createdAt": "2022-04-04T11:23:14.880Z",
+      "modifiedAt": "2025-10-12T18:19:26.569Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 260,
+        "slack_id": "U02HZ3QMZSR",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_sync_errors": ["Contact already exists. Existing ID: 376651"]
+      },
+      "_id": "624ad52395f66501e48a1afa",
+      "name": "Kate Belorusskaya",
+      "email": "e.belorusskaya@gmail.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "former",
+      "startDate": "2021-10-18T00:00:00.000Z",
+      "createdAt": "2022-04-04T11:23:15.346Z",
+      "modifiedAt": "2025-10-10T19:32:17.402Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 426,
+        "slack_id": "U038NG513GB",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162795674627"
+      },
+      "_id": "624ad52395f66503998a1b5d",
+      "name": "Sofiia Shyshovska",
+      "email": "sofiia.shyshovska@sanitydesk.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "former",
+      "startDate": null,
+      "createdAt": "2022-04-04T11:23:15.699Z",
+      "modifiedAt": "2025-10-12T18:19:35.982Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 191,
+        "slack_id": "U02ASEVA23W",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_sync_errors": ["Contact already exists. Existing ID: 310601"]
+      },
+      "_id": "624ad52395f66512ca8a1b26",
+      "name": "Miłosz Filimowski",
+      "email": "milosz.fil@gmail.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "former",
+      "startDate": "2021-08-09T00:00:00.000Z",
+      "createdAt": "2022-04-04T11:23:15.516Z",
+      "modifiedAt": "2025-10-10T19:32:20.576Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 258,
+        "slack_id": "U02H2460R37",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162743576982"
+      },
+      "_id": "624ad52395f6651c9c8a1b1b",
+      "name": "Łukasz Broś",
+      "email": "lukasz.bros@gmail.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "active",
+      "startDate": null,
+      "createdAt": "2022-04-04T11:23:15.475Z",
+      "modifiedAt": "2025-10-12T18:19:26.960Z"
+    },
+    {
+      "properties": {
+        "Customer Number": 314,
+        "slack_id": "U01J6ECR96W",
+        "slack_team_id": "TTYT5KL5T",
+        "hubspot_link_id": "7305841-162743576981"
+      },
+      "_id": "624ad52395f665260e8a1ad9",
+      "name": "Will Abbott",
+      "email": "willroy_@hotmail.com",
+      "location": "5d1bcda0dbd6e40010479eec",
+      "status": "former",
+      "startDate": null,
+      "createdAt": "2022-04-04T11:23:15.173Z",
+      "modifiedAt": "2025-10-12T18:19:26.878Z"
+    }
+  ]
+}

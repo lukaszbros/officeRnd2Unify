@@ -3,13 +3,14 @@ import { Interval } from '@nestjs/schedule';
 import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
 import { OfficerndAuthService } from './auth.service';
+import { ApiResponse, Contact } from './interfaces';
 
 @Injectable()
 export class ApiSchedulerService {
   INTERVAL = 60 * 1000;
 
   private readonly logger = new Logger(ApiSchedulerService.name);
-
+  private lastCall = new Date().toISOString();
   private authToken: string | null = null;
 
   constructor(
@@ -27,10 +28,11 @@ export class ApiSchedulerService {
   async callExternalApi() {
     this.logger.log('Api called');
     const token = await this.officerndAuthService.getToken();
+    const callTime = new Date().toISOString();
     try {
       const response = await firstValueFrom(
-        this.http.get(
-          'https://app.officernd.com/api/v2/organizations/yolkkrakow/members',
+        this.http.get<ApiResponse<Contact>>(
+          `https://app.officernd.com/api/v2/organizations/yolkkrakow/members?createdAt[$gte]=${this.lastCall}&status=active`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -38,7 +40,12 @@ export class ApiSchedulerService {
           },
         ),
       );
-      this.logger.log('API response:', JSON.stringify(response.data));
+      this.logger.log(
+        'API response:',
+        JSON.stringify(response.data.results),
+        response.data.results.length,
+      );
+      this.lastCall = callTime;
       // Do something with response.data here
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
