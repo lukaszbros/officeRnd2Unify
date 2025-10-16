@@ -6,6 +6,7 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { ApiSchedulerService } from './api.scheduler.service';
 import { OfficerndAuthService } from './auth.service';
 import { UnifyService } from './unify.service';
+import { UserService } from './user.service';
 
 @Module({
   imports: [ScheduleModule.forRoot(), HttpModule],
@@ -15,6 +16,7 @@ import { UnifyService } from './unify.service';
     ApiSchedulerService,
     OfficerndAuthService,
     UnifyService,
+    UserService,
   ],
 })
 export class AppModule {}

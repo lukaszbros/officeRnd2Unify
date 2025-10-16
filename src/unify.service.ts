@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import https from 'https';
 import { lastValueFrom } from 'rxjs';
-import { UResponse, UUser } from './interfacesU';
+import { UCreateUser, UResponse, UUser } from './interfacesU';
 
 @Injectable()
 export class UnifyService {
@@ -46,7 +46,15 @@ export class UnifyService {
     }
   }
 
-  createUser(user: UUser) {
-    this.http.post(`${this.unifyApiPath}/users`, user, this.queryConfig);
+  async createUser(user: UCreateUser) {
+    try {
+      const response = await lastValueFrom(
+        this.http.post(`${this.unifyApiPath}/users`, user, this.queryConfig),
+      );
+      console.log('Response data:', response.data);
+    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.error('Error:', error.message);
+    }
   }
 }

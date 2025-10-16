@@ -22,6 +22,12 @@ export interface UUser {
   status: string;
 }
 
+export interface UCreateUser extends Partial<UUser> {
+  first_name: string;
+  last_name: string;
+  user_email: string;
+}
+
 export interface UAccessPolicy {
   id: string;
   name: string;

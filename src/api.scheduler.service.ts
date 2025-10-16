@@ -4,7 +4,7 @@ import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
 import { OfficerndAuthService } from './auth.service';
 import { RndResponse, RndContact } from './interfacesRnd';
-import { UnifyService } from './unify.service';
+import { UserService } from './user.service';
 
 @Injectable()
 export class ApiSchedulerService {
@@ -17,7 +17,7 @@ export class ApiSchedulerService {
   constructor(
     private readonly http: HttpService,
     private readonly officerndAuthService: OfficerndAuthService,
-    private readonly unifyService: UnifyService,
+    private readonly userService: UserService,
   ) {
     this.logger.log('Scheduler started');
   }
@@ -47,6 +47,12 @@ export class ApiSchedulerService {
         JSON.stringify(response.data.results),
         response.data.results.length,
       );
+      if (response.data.results.length > 0) {
+        for (const user of response.data.results) {
+          this.userService.processUser(user);
+        }
+      }
+
       this.lastCall = callTime;
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
