@@ -3,7 +3,8 @@ import { Interval } from '@nestjs/schedule';
 import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
 import { OfficerndAuthService } from './auth.service';
-import { ApiResponse, Contact } from './interfaces';
+import { RndResponse, RndContact } from './interfacesRnd';
+import { UnifyService } from './unify.service';
 
 @Injectable()
 export class ApiSchedulerService {
@@ -16,6 +17,7 @@ export class ApiSchedulerService {
   constructor(
     private readonly http: HttpService,
     private readonly officerndAuthService: OfficerndAuthService,
+    private readonly unifyService: UnifyService,
   ) {
     this.logger.log('Scheduler started');
   }
@@ -31,7 +33,7 @@ export class ApiSchedulerService {
     const callTime = new Date().toISOString();
     try {
       const response = await firstValueFrom(
-        this.http.get<ApiResponse<Contact>>(
+        this.http.get<RndResponse<RndContact>>(
           `https://app.officernd.com/api/v2/organizations/yolkkrakow/members?modifiedAt[$gte]=${this.lastCall}`,
           {
             headers: {
@@ -46,7 +48,6 @@ export class ApiSchedulerService {
         response.data.results.length,
       );
       this.lastCall = callTime;
-      // Do something with response.data here
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       this.logger.error('Failed to call API', error.message);

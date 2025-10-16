@@ -3,14 +3,14 @@ export interface OfficeRNDAuth {
   expires_in: number;
 }
 
-export interface ApiResponse<T> {
+export interface RndResponse<T> {
   range_start: number;
   range_end: number;
   cursor_next: string;
   results: T[];
 }
 
-export interface Contact {
+export interface RndContact {
   properties: {
     Work_Situation?: string[];
     hubspot_sync_errors?: string[];

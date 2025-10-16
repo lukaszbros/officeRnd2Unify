@@ -5,10 +5,16 @@ import { HttpModule } from '@nestjs/axios';
 import { ScheduleModule } from '@nestjs/schedule';
 import { ApiSchedulerService } from './api.scheduler.service';
 import { OfficerndAuthService } from './auth.service';
+import { UnifyService } from './unify.service';
 
 @Module({
   imports: [ScheduleModule.forRoot(), HttpModule],
   controllers: [AppController],
-  providers: [AppService, ApiSchedulerService, OfficerndAuthService],
+  providers: [
+    AppService,
+    ApiSchedulerService,
+    OfficerndAuthService,
+    UnifyService,
+  ],
 })
 export class AppModule {}

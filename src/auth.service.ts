@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
 import * as qs from 'qs';
-import { OfficeRNDAuth } from './interfaces';
+import { OfficeRNDAuth } from './interfacesRnd';
 
 @Injectable()
 export class OfficerndAuthService {
