@@ -32,7 +32,7 @@ export class ApiSchedulerService {
     try {
       const response = await firstValueFrom(
         this.http.get<ApiResponse<Contact>>(
-          `https://app.officernd.com/api/v2/organizations/yolkkrakow/members?createdAt[$gte]=${this.lastCall}&status=active`,
+          `https://app.officernd.com/api/v2/organizations/yolkkrakow/members?modifiedAt[$gte]=${this.lastCall}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
