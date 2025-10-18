@@ -7,6 +7,7 @@ import { ApiSchedulerService } from './api.scheduler.service';
 import { OfficerndAuthService } from './auth.service';
 import { UnifyService } from './unify.service';
 import { UserService } from './user.service';
+import { RndService } from './rnd.service';
 
 @Module({
   imports: [ScheduleModule.forRoot(), HttpModule],
@@ -15,6 +16,7 @@ import { UserService } from './user.service';
     AppService,
     ApiSchedulerService,
     OfficerndAuthService,
+    RndService,
     UnifyService,
     UserService,
   ],

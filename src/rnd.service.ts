@@ -1,0 +1,71 @@
+import { HttpService } from '@nestjs/axios';
+import { Injectable, Logger } from '@nestjs/common';
+import { OfficerndAuthService } from './auth.service';
+import { lastValueFrom } from 'rxjs';
+import { RndContact, RndResponse } from './interfacesRnd';
+
+@Injectable()
+export class RndService {
+  private readonly logger = new Logger(RndService.name);
+  private API_PATH =
+    'https://app.officernd.com/api/v2/organizations/yolkkrakow';
+
+  constructor(
+    private readonly http: HttpService,
+    private readonly officerndAuthService: OfficerndAuthService,
+  ) {
+    this.logger.log('Scheduler started');
+  }
+
+  async onModuleInit() {
+    await this.officerndAuthService.getToken();
+  }
+
+  async getChangedUser(lastCall: Date) {
+    this.logger.log('Get changed users');
+    const token = await this.officerndAuthService.getToken();
+    try {
+      const response = await lastValueFrom(
+        this.http.get<RndResponse<RndContact>>(
+          `${this.API_PATH}/members?modifiedAt[$gte]=${lastCall.toISOString()}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        ),
+      );
+      this.logger.log(
+        'API response:',
+        JSON.stringify(response.data.results),
+        response.data.results.length,
+      );
+      return response.data.results;
+    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      this.logger.error('Failed to call API', error.message);
+    }
+  }
+
+  async getUserMemberships(memberId: string) {
+    this.logger.log('Get membership');
+    const token = await this.officerndAuthService.getToken();
+    try {
+      const response = await lastValueFrom(
+        this.http.get<RndResponse<RndContact>>(
+          `${this.API_PATH}/memberships?member_id=${memberId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              Accept: 'application/json',
+            },
+          },
+        ),
+      );
+      return response.data;
+    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      this.logger.error('Failed to call API', error.message);
+    }
+  }
+}

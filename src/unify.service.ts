@@ -46,6 +46,10 @@ export class UnifyService {
     }
   }
 
+  getUserByEmail(email: string) {
+    return this.users.find((u) => u.user_email === email);
+  }
+
   async createUser(user: UCreateUser) {
     try {
       const response = await lastValueFrom(
