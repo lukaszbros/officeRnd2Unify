@@ -24,6 +24,7 @@ export class UnifyService {
 
   async onModuleInit() {
     await this.getUsers();
+    //await this.fetchAccessPolicy();
   }
 
   async getUsers() {
@@ -61,4 +62,25 @@ export class UnifyService {
       console.error('Error:', error.message);
     }
   }
+
+  /*async fetchAccessPolicy() {
+    ////api/v1/developer/access_policies
+    this.logger.log('loading current users');
+    try {
+      const response = await lastValueFrom(
+        this.http.get<UResponse<UUser>>(
+          `${this.unifyApiPath}/access_policies?age_num=1&page_size=25`,
+          this.queryConfig,
+        ),
+      );
+
+      this.users = response.data.data;
+      if (response.data.pagination.total === response.data.data.length) {
+        this.logger.log(`Unify user loaded ${response.data}`);
+      }
+    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      this.logger.error('Failed to call API', error.message);
+    }
+  }*/
 }

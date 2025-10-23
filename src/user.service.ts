@@ -15,14 +15,14 @@ export class UserService {
   }
 
   async processUser(user: RndContact) {
-    this.logger.log('Procerss user', user);
+    this.logger.log('Procerss user');
     const parts = user.name.trim().split(' ');
     const firstName = parts[0];
     const lastName = parts.slice(1).join(' ');
 
     const existingUser = this.unifyService.getUserByEmail(user.email);
     if (existingUser) {
-      this.logger.log('User exists', existingUser);
+      this.logger.log('User exists');
     } else {
       const newUser = {
         first_name: firstName,

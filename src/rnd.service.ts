@@ -53,7 +53,7 @@ export class RndService {
     try {
       const response = await lastValueFrom(
         this.http.get<RndResponse<RndContact>>(
-          `${this.API_PATH}/memberships?member_id=${memberId}`,
+          `${this.API_PATH}/memberships?member=${memberId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
