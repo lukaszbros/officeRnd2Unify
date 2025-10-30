@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import https from 'https';
 import { lastValueFrom } from 'rxjs';
-import { UCreateUser, UResponse, UUser } from './interfacesU';
+import { UAccessPolicy, UCreateUser, UResponse, UUser } from './interfacesU';
 
 @Injectable()
 export class UnifyService {
@@ -17,6 +17,7 @@ export class UnifyService {
   };
   private readonly logger = new Logger(UnifyService.name);
   private users: UUser[] = [];
+  private accessPolicies: UAccessPolicy[] = [];
 
   constructor(private readonly http: HttpService) {
     this.logger.log('Unify started');
@@ -24,7 +25,7 @@ export class UnifyService {
 
   async onModuleInit() {
     await this.getUsers();
-    //await this.fetchAccessPolicy();
+    await this.fetchAccessPolicies();
   }
 
   async getUsers() {
@@ -63,24 +64,25 @@ export class UnifyService {
     }
   }
 
-  /*async fetchAccessPolicy() {
-    ////api/v1/developer/access_policies
-    this.logger.log('loading current users');
+  async fetchAccessPolicies() {
+    this.logger.log('loading Unify access_policies');
     try {
       const response = await lastValueFrom(
-        this.http.get<UResponse<UUser>>(
+        this.http.get<UResponse<UAccessPolicy>>(
           `${this.unifyApiPath}/access_policies?age_num=1&page_size=25`,
           this.queryConfig,
         ),
       );
 
-      this.users = response.data.data;
+      this.accessPolicies = response.data.data;
       if (response.data.pagination.total === response.data.data.length) {
-        this.logger.log(`Unify user loaded ${response.data}`);
+        this.logger.log(
+          `Unify access_policies loaded ${response.data.data.length}`,
+        );
       }
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       this.logger.error('Failed to call API', error.message);
     }
-  }*/
+  }
 }

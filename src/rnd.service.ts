@@ -2,7 +2,7 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
 import { OfficerndAuthService } from './auth.service';
 import { lastValueFrom } from 'rxjs';
-import { RndContact, RndResponse } from './interfacesRnd';
+import { RndUser, RndResponse, RndMembership } from './interfacesRnd';
 
 @Injectable()
 export class RndService {
@@ -26,7 +26,7 @@ export class RndService {
     const token = await this.officerndAuthService.getToken();
     try {
       const response = await lastValueFrom(
-        this.http.get<RndResponse<RndContact>>(
+        this.http.get<RndResponse<RndUser>>(
           `${this.API_PATH}/members?modifiedAt[$gte]=${lastCall.toISOString()}`,
           {
             headers: {
@@ -48,11 +48,11 @@ export class RndService {
   }
 
   async getUserMemberships(memberId: string) {
-    this.logger.log('Get membership');
+    this.logger.log(`Get member ${memberId} membership`);
     const token = await this.officerndAuthService.getToken();
     try {
       const response = await lastValueFrom(
-        this.http.get<RndResponse<RndContact>>(
+        this.http.get<RndResponse<RndMembership>>(
           `${this.API_PATH}/memberships?member=${memberId}`,
           {
             headers: {

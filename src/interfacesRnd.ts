@@ -10,7 +10,7 @@ export interface RndResponse<T> {
   results: T[];
 }
 
-export interface RndContact {
+export interface RndUser {
   properties: {
     Work_Situation?: string[];
     hubspot_sync_errors?: string[];
@@ -26,6 +26,15 @@ export interface RndContact {
   company: string;
   status: string;
   start_date: string;
+  created_at: string;
+  modified_at: string;
+}
+
+export interface RndMembership {
+  _id: string;
+  member: string;
+  organization: string;
+  role: string;
   created_at: string;
   modified_at: string;
 }

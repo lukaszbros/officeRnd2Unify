@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { UnifyService } from './unify.service';
-import { RndContact } from './interfacesRnd';
+import { RndUser } from './interfacesRnd';
 import { RndService } from './rnd.service';
 
 @Injectable()
@@ -14,7 +14,7 @@ export class UserService {
     this.logger.log('User service started');
   }
 
-  async processUser(user: RndContact) {
+  async processUser(user: RndUser) {
     this.logger.log('Procerss user');
     const parts = user.name.trim().split(' ');
     const firstName = parts[0];
