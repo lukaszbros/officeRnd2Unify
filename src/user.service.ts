@@ -33,10 +33,19 @@ export class UserService {
       //await this.unifyService.createUser(newUser);
     }
 
-    console.log('Check membership');
-    const membership = await this.rndService.getUserMemberships(user._id);
-    this.logger.log('Membership', membership);
+    this.logger.log('Check membership');
+    const membershipsResponse = await this.rndService.getUserMemberships(
+      user._id,
+    );
+    this.logger.log('Membership', membershipsResponse);
 
+    this.logger.log('Check membership plans');
+    if (membershipsResponse?.results) {
+      for (const membership of membershipsResponse.results) {
+        const plan = await this.rndService.getPlan(membership.plan);
+        this.logger.log('Plan', plan);
+      }
+    }
     this.logger.log('User processed');
   }
 }

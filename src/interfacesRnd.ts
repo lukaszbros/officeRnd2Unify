@@ -3,7 +3,7 @@ export interface OfficeRNDAuth {
   expires_in: number;
 }
 
-export interface RndResponse<T> {
+export interface RndListResponse<T> {
   range_start: number;
   range_end: number;
   cursor_next: string;
@@ -35,6 +35,17 @@ export interface RndMembership {
   member: string;
   organization: string;
   role: string;
+  created_at: string;
+  modified_at: string;
+  plan: string;
+}
+
+export interface RndPlan {
+  _id: string;
+  name: string;
+  description: string;
+  price: number;
+  duration_months: number;
   created_at: string;
   modified_at: string;
 }

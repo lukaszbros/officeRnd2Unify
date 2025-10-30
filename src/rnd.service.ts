@@ -2,7 +2,12 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
 import { OfficerndAuthService } from './auth.service';
 import { lastValueFrom } from 'rxjs';
-import { RndUser, RndResponse, RndMembership } from './interfacesRnd';
+import {
+  RndUser,
+  RndListResponse,
+  RndMembership,
+  RndPlan,
+} from './interfacesRnd';
 
 @Injectable()
 export class RndService {
@@ -26,7 +31,7 @@ export class RndService {
     const token = await this.officerndAuthService.getToken();
     try {
       const response = await lastValueFrom(
-        this.http.get<RndResponse<RndUser>>(
+        this.http.get<RndListResponse<RndUser>>(
           `${this.API_PATH}/members?modifiedAt[$gte]=${lastCall.toISOString()}`,
           {
             headers: {
@@ -52,7 +57,7 @@ export class RndService {
     const token = await this.officerndAuthService.getToken();
     try {
       const response = await lastValueFrom(
-        this.http.get<RndResponse<RndMembership>>(
+        this.http.get<RndListResponse<RndMembership>>(
           `${this.API_PATH}/memberships?member=${memberId}`,
           {
             headers: {
@@ -61,6 +66,25 @@ export class RndService {
             },
           },
         ),
+      );
+      return response.data;
+    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      this.logger.error('Failed to call API', error.message);
+    }
+  }
+
+  async getPlan(planId: string) {
+    this.logger.log(`Get plan ${planId}`);
+    const token = await this.officerndAuthService.getToken();
+    try {
+      const response = await lastValueFrom(
+        this.http.get<RndPlan>(`${this.API_PATH}/plans/${planId}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            Accept: 'application/json',
+          },
+        }),
       );
       return response.data;
     } catch (error) {
