@@ -20,8 +20,7 @@ export class OfficerndAuthService {
       client_secret: 'iiUT7kr0OxXEAN0Qlz9FKBJkvpRDe9e5',
       client_id: '7WCHj7WOpiZUKKpe',
       grant_type: 'client_credentials',
-      scope:
-        'flex.community.members.read flex.community.companies.read flex.community.memberships.read flex.space.resources.read flex.space.bookings.read',
+      scope: 'flex.community.members.read flex.community.memberships.read',
     };
 
     const headers = {

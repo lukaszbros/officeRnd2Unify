@@ -39,9 +39,7 @@ export class UnifyService {
       );
 
       this.users = response.data.data;
-      if (response.data.pagination.total === response.data.data.length) {
-        this.logger.log(`Unify user loaded ${response.data.data.length}`);
-      }
+      this.logger.log(`Unify user loaded ${response.data.data.length}`);
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       this.logger.error('Failed to call API', error.message);
@@ -69,17 +67,15 @@ export class UnifyService {
     try {
       const response = await lastValueFrom(
         this.http.get<UResponse<UAccessPolicy>>(
-          `${this.unifyApiPath}/access_policies?age_num=1&page_size=25`,
+          `${this.unifyApiPath}/access_policies?page_num=1&page_size=25`,
           this.queryConfig,
         ),
       );
 
       this.accessPolicies = response.data.data;
-      if (response.data.pagination.total === response.data.data.length) {
-        this.logger.log(
-          `Unify access_policies loaded ${response.data.data.length}`,
-        );
-      }
+      this.logger.log(
+        `Unify access_policies loaded ${response.data.data.length}`,
+      );
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       this.logger.error('Failed to call API', error.message);

@@ -5,7 +5,7 @@ export interface UResponse<T> {
   cursor_next: string;
   data: T[];
   msg: 'success' | 'error';
-  pagination: { page_num: number; page_size: number; total: number };
+  pagination?: { page_num?: number; page_size?: number; total?: number };
 }
 
 export interface UUser {
