@@ -38,13 +38,6 @@ export class UserService {
     );
     this.logger.log('Membership', membershipsResponse);
 
-    this.logger.log('Check membership plans');
-    if (membershipsResponse?.results) {
-      for (const membership of membershipsResponse.results) {
-        const plan = await this.rndService.getPlan(membership.plan);
-        this.logger.log('Plan', plan);
-      }
-    }
     this.logger.log('User processed');
   }
 }

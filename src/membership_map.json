@@ -1,0 +1,32 @@
+[
+  {
+    "uid": "f6cea0e1-96c5-4e71-9f24-345897ea433b",
+    "name": "1FL 4Desk",
+    "rndId": "666059e1a4dc3f418048f5b1"
+  },
+  {
+    "uid": "84f905e0-639c-11ee-8774-d021f9d7ff75",
+    "name": "2FL 12Desk",
+    "rndId": "62304697d724a67ab52df087"
+  },
+  {
+    "uid": "1b9961aa-624a-43d5-b900-93f87a6252fd",
+    "name": "2FL 8Desk",
+    "rndId": "6230467c1c2fed95a60729b3"
+  },
+  {
+    "uid": "8a77cd42-5ecf-48bd-80e3-822ee52a55d2",
+    "name": "Community",
+    "rndId": "623de1d892bbb18a84f9d4b9"
+  },
+  {
+    "uid": "84fbfd9b-639c-11ee-8774-d021f9d7ff75",
+    "name": "Dedicated",
+    "rndId": "622b7418799a9c79623266b8"
+  },
+  {
+    "uid": "84fab709-639c-11ee-8774-d021f9d7ff75",
+    "name": "Flexible",
+    "rndId": "622b7418799a9c6b7e3266ba"
+  }
+]
