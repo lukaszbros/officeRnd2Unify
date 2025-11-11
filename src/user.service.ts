@@ -2,16 +2,38 @@ import { Injectable, Logger } from '@nestjs/common';
 import { UnifyService } from './unify.service';
 import { RndUser } from './interfacesRnd';
 import { RndService } from './rnd.service';
+import fs from 'fs';
+import path from 'path';
+import { IMemembershipMap } from './interface';
 
 @Injectable()
 export class UserService {
   private readonly logger = new Logger(UserService.name);
+  private membershipMap: IMemembershipMap[] = [];
 
   constructor(
     private readonly rndService: RndService,
     private readonly unifyService: UnifyService,
   ) {
     this.logger.log('User service started');
+  }
+  onModuleInit() {
+    this.logger.log('Initialising');
+    this.loadMembrshiopMap();
+  }
+
+  loadMembrshiopMap() {
+    const mapPath = path.join(process.cwd(), 'membership_map.json');
+    try {
+      const raw = fs.readFileSync(mapPath, 'utf8');
+      this.membershipMap = JSON.parse(raw) as IMemembershipMap[];
+      this.logger.log(`Loaded membership_map.json from ${mapPath}`);
+    } catch (err) {
+      this.logger.error(
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        `Failed to load membership_map.json: ${err?.message ?? err}`,
+      );
+    }
   }
 
   async processUser(user: RndUser) {
@@ -20,8 +42,8 @@ export class UserService {
     const firstName = parts[0];
     const lastName = parts.slice(1).join(' ');
 
-    const existingUser = this.unifyService.getUserByEmail(user.email);
-    if (existingUser) {
+    let uuser = this.unifyService.getUserByEmail(user.email);
+    if (uuser) {
       this.logger.log('User exists');
     } else {
       const newUser = {
@@ -29,14 +51,19 @@ export class UserService {
         last_name: lastName,
         user_email: user.email,
       };
-      await this.unifyService.createUser(newUser);
+      uuser = await this.unifyService.createUser(newUser);
     }
 
     this.logger.log('Check membership');
-    const membershipsResponse = await this.rndService.getUserMemberships(
-      user._id,
-    );
-    this.logger.log('Membership', membershipsResponse);
+    const rndMemberships = await this.rndService.getUserMemberships(user._id);
+    this.logger.log('Membership', rndMemberships);
+    const rndPlans = Array.from(new Set(rndMemberships?.map((m) => m.plan)));
+
+    const mappedPlans = rndPlans
+      .map((plan) => this.membershipMap.filter((m) => m.rndId === plan))
+      .filter((p) => p !== null);
+
+    this.logger.log('Mapped plans', mappedPlans);
 
     this.logger.log('User processed');
   }

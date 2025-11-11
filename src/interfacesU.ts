@@ -3,7 +3,7 @@ export interface UResponse<T> {
   range_start: number;
   range_end: number;
   cursor_next: string;
-  data: T[];
+  data: T;
   msg: 'success' | 'error';
   pagination?: { page_num?: number; page_size?: number; total?: number };
 }

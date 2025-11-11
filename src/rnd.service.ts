@@ -67,7 +67,7 @@ export class RndService {
           },
         ),
       );
-      return response.data;
+      return response.data.results;
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       this.logger.error('Failed to call API', error.message);

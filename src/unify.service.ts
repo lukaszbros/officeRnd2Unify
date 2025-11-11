@@ -43,7 +43,7 @@ export class UnifyService {
         this.logger.log('Users loaded(sim) 0');
       } else {
         const response = await lastValueFrom(
-          this.http.get<UResponse<UUser>>(
+          this.http.get<UResponse<UUser[]>>(
             `${this.unifyApiPath}/users?age_num=1&page_size=25`,
             this.queryConfig,
           ),
@@ -69,9 +69,14 @@ export class UnifyService {
         this.logger.log('User created (sim)', user);
       } else {
         const response = await lastValueFrom(
-          this.http.post(`${this.unifyApiPath}/users`, user, this.queryConfig),
+          this.http.post<UResponse<UUser>>(
+            `${this.unifyApiPath}/users`,
+            user,
+            this.queryConfig,
+          ),
         );
         console.log('User created:', response.data);
+        return response.data.data;
       }
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -86,7 +91,7 @@ export class UnifyService {
         this.logger.log('Access_policies loaded (sim) 0');
       } else {
         const response = await lastValueFrom(
-          this.http.get<UResponse<UAccessPolicy>>(
+          this.http.get<UResponse<UAccessPolicy[]>>(
             `${this.unifyApiPath}/access_policies?page_num=1&page_size=25`,
             this.queryConfig,
           ),
