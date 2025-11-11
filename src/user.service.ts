@@ -29,8 +29,7 @@ export class UserService {
         last_name: lastName,
         user_email: user.email,
       };
-      this.logger.log('Add new user', newUser);
-      //await this.unifyService.createUser(newUser);
+      await this.unifyService.createUser(newUser);
     }
 
     this.logger.log('Check membership');

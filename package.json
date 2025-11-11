@@ -9,6 +9,7 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
+    "start:sim": "nest start -- --sim",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -26,6 +27,7 @@
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/schedule": "^6.0.1",
     "body-parser": "^2.2.0",
+    "minimist": "^1.2.8",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
@@ -37,6 +39,7 @@
     "@nestjs/testing": "^11.0.1",
     "@types/express": "^5.0.0",
     "@types/jest": "^30.0.0",
+    "@types/minimist": "^1.2.5",
     "@types/node": "^22.10.7",
     "@types/supertest": "^6.0.2",
     "eslint": "^9.18.0",
