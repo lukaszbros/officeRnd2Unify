@@ -1,17 +1,24 @@
 import { Controller, Get, Post, Req } from '@nestjs/common';
 import type { RawBodyRequest } from '@nestjs/common';
-import { AppService } from './app.service';
-import { HttpService } from '@nestjs/axios';
+import { MemoryLoggerService } from './memory.logger.service';
 
 @Controller()
 export class AppController {
-  constructor(
-    private readonly appService: AppService,
-    private readonly httpService: HttpService,
-  ) {}
+  constructor(private readonly logger: MemoryLoggerService) {}
 
   @Get()
-  getHello(): string {
+  logs(): string {
+    return this.logger
+      .getLogs()
+      .map((log) => {
+        const d = new Date(log.timestamp);
+        const pad = (n: number) => n.toString().padStart(2, '0');
+        const formatted = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(
+          d.getHours(),
+        )}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+        return `[${log.level}] ${formatted}: ${log.message}`;
+      })
+      .join('<br/>');
     /*
 call to webhook api
 this.httpService 
@@ -25,8 +32,6 @@ this.httpService
         }, 
       }); 
   */
-
-    return this.appService.getHello();
   }
 
   @Post()

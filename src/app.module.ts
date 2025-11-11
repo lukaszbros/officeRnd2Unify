@@ -8,6 +8,7 @@ import { OfficerndAuthService } from './auth.service';
 import { UnifyService } from './unify.service';
 import { UserService } from './user.service';
 import { RndService } from './rnd.service';
+import { MemoryLoggerService } from './memory.logger.service';
 
 @Module({
   imports: [ScheduleModule.forRoot(), HttpModule],
@@ -19,6 +20,7 @@ import { RndService } from './rnd.service';
     RndService,
     UnifyService,
     UserService,
+    MemoryLoggerService,
   ],
 })
 export class AppModule {}
