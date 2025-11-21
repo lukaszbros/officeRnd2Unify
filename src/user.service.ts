@@ -65,8 +65,12 @@ export class UserService {
 
     const mappedUPlanIds = mappedPlans.map((p) => p.uid);
     this.logger.log('Update plans');
-    this.logger.log(JSON.stringify(mappedUPlanIds, null, 2));
-    this.logger.log(JSON.stringify(uuser?.access_policy_ids, null, 2));
+    this.logger.log(`RND: ${JSON.stringify(mappedUPlanIds, null, 2)}`);
+    this.logger.log(
+      `Unify: ${JSON.stringify(uuser?.access_policy_ids, null, 2)}`,
+    );
+
+    console.log(uuser, mappedUPlanIds, mappedUPlanIds.length > 0);
 
     if (
       uuser &&

@@ -351,8 +351,9 @@ let UserService = UserService_1 = class UserService {
         this.logger.log(`Mapped plans ${JSON.stringify(mappedPlans, null, 2)}`);
         const mappedUPlanIds = mappedPlans.map((p) => p.uid);
         this.logger.log('Update plans');
-        this.logger.log(JSON.stringify(mappedUPlanIds, null, 2));
-        this.logger.log(JSON.stringify(uuser?.access_policy_ids, null, 2));
+        this.logger.log(`RND: ${JSON.stringify(mappedUPlanIds, null, 2)}`);
+        this.logger.log(`Unify: ${JSON.stringify(uuser?.access_policy_ids, null, 2)}`);
+        console.log(uuser, mappedUPlanIds, mappedUPlanIds.length > 0);
         if (uuser &&
             mappedUPlanIds &&
             mappedUPlanIds.length > 0 &&
@@ -471,6 +472,7 @@ let UnifyService = UnifyService_1 = class UnifyService {
             else {
                 const response = await (0, rxjs_1.lastValueFrom)(this.http.post(`${this.unifyApiPath}/users`, user, this.queryConfig));
                 this.logger.log('User created');
+                this.users.push(response.data.data);
                 return response.data.data;
             }
         }

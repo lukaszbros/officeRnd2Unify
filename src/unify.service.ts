@@ -103,6 +103,7 @@ export class UnifyService {
           ),
         );
         this.logger.log('User created');
+        this.users.push(response.data.data);
         return response.data.data;
       }
     } catch (error) {
