@@ -19,6 +19,7 @@ export class UnifyService {
   private readonly logger = new Logger(UnifyService.name);
   private nounify = false;
   private sim = false;
+  private noConnection = false;
   private users: UUser[] = [];
   private accessPolicies: UAccessPolicy[] = [];
   constructor(private readonly http: HttpService) {
@@ -39,7 +40,7 @@ export class UnifyService {
   async getUsers() {
     this.logger.log('Loading users');
     try {
-      if (this.sim) {
+      if (this.noConnection) {
         this.logger.log('Users loaded(sim) 0');
       } else {
         const response = await lastValueFrom(
@@ -58,8 +59,34 @@ export class UnifyService {
     }
   }
 
-  getUserByEmail(email: string) {
-    return this.users.find((u) => u.user_email === email);
+  async getUserByEmail(email: string) {
+    const mappedUser = this.users.find((u) => u.user_email === email);
+
+    if (!mappedUser) {
+      this.logger.warn('No user found');
+      return;
+    }
+
+    try {
+      if (this.noConnection) {
+        this.logger.log('Users not loaded (sim)');
+      } else {
+        const response = await lastValueFrom(
+          this.http.get<UResponse<UUser>>(
+            `${this.unifyApiPath}/users/${mappedUser.id}?expand[]=access_policy`,
+            this.queryConfig,
+          ),
+        );
+
+        this.logger.log(
+          `Users loaded ${JSON.stringify(response.data.data, null, 2)}`,
+        );
+        return response.data.data;
+      }
+    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      this.logger.error('Failed to call API', error.message);
+    }
   }
 
   async createUser(user: UCreateUser) {
@@ -75,19 +102,19 @@ export class UnifyService {
             this.queryConfig,
           ),
         );
-        console.log('User created:', response.data);
+        this.logger.log('User created');
         return response.data.data;
       }
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      console.error('Error:', error.message);
+      this.logger.error('Error:', error.message);
     }
   }
 
   async fetchAccessPolicies() {
     this.logger.log('Loading access_policies');
     try {
-      if (this.sim) {
+      if (this.noConnection) {
         this.logger.log('Access_policies loaded (sim) 0');
       } else {
         const response = await lastValueFrom(
@@ -103,6 +130,30 @@ export class UnifyService {
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       this.logger.error('Failed to call API', error.message);
+    }
+  }
+
+  async assignUserAccessPolicy(userId: string, accessPolicyIds: string[]) {
+    this.logger.log('Assign policies to user');
+    try {
+      if (this.sim) {
+        this.logger.log(
+          `Assing ${userId} access_policy_ids ${JSON.stringify(accessPolicyIds, null, 2)}`,
+        );
+      } else {
+        await lastValueFrom(
+          this.http.put<UResponse<UUser>>(
+            `${this.unifyApiPath}/users/${userId}/access_policies`,
+            { access_policy_ids: accessPolicyIds },
+            this.queryConfig,
+          ),
+        );
+        this.logger.log('User policies assingned');
+        return true;
+      }
+    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      this.logger.error('Error:', error.message);
     }
   }
 }

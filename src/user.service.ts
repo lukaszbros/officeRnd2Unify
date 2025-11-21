@@ -42,7 +42,7 @@ export class UserService {
     const firstName = parts[0];
     const lastName = parts.slice(1).join(' ');
 
-    let uuser = this.unifyService.getUserByEmail(user.email);
+    let uuser = await this.unifyService.getUserByEmail(user.email);
     if (uuser) {
       this.logger.log('User exists');
     } else {
@@ -56,14 +56,28 @@ export class UserService {
 
     this.logger.log('Check membership');
     const rndMemberships = await this.rndService.getUserMemberships(user._id);
-    this.logger.log('Membership', rndMemberships);
     const rndPlans = Array.from(new Set(rndMemberships?.map((m) => m.plan)));
-
     const mappedPlans = rndPlans
-      .map((plan) => this.membershipMap.filter((m) => m.rndId === plan))
+      .flatMap((plan) => this.membershipMap.filter((m) => m.rndId === plan))
       .filter((p) => p !== null);
 
-    this.logger.log('Mapped plans', mappedPlans);
+    this.logger.log(`Mapped plans ${JSON.stringify(mappedPlans, null, 2)}`);
+
+    const mappedUPlanIds = mappedPlans.map((p) => p.uid);
+    this.logger.log('Update plans');
+    this.logger.log(JSON.stringify(mappedUPlanIds, null, 2));
+    this.logger.log(JSON.stringify(uuser?.access_policy_ids, null, 2));
+
+    if (
+      uuser &&
+      mappedUPlanIds &&
+      mappedUPlanIds.length > 0 &&
+      JSON.stringify(mappedUPlanIds) !== JSON.stringify(uuser.access_policy_ids)
+    ) {
+      await this.unifyService.assignUserAccessPolicy(uuser?.id, mappedUPlanIds);
+    } else {
+      this.logger.log('Plans are the same no update needed');
+    }
 
     this.logger.log('User processed');
   }

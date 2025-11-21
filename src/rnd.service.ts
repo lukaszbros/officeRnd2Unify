@@ -40,11 +40,7 @@ export class RndService {
           },
         ),
       );
-      this.logger.log(
-        'API response:',
-        JSON.stringify(response.data.results),
-        response.data.results.length,
-      );
+      this.logger.log(`API response ${JSON.stringify(response.data.results)}`);
       return response.data.results;
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -67,7 +63,9 @@ export class RndService {
           },
         ),
       );
-      return response.data.results;
+      return response.data.results.flatMap(
+        (membership: RndMembership) => membership,
+      );
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       this.logger.error('Failed to call API', error.message);
