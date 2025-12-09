@@ -56,7 +56,9 @@ export class UserService {
 
     this.logger.log('Check membership');
     const rndMemberships = await this.rndService.getUserMemberships(user._id);
+    this.logger.log(`Found rnd memberships ${JSON.stringify(rndMemberships)}`);
     const rndPlans = Array.from(new Set(rndMemberships?.map((m) => m.plan)));
+    this.logger.log(`Found rnd plans ${JSON.stringify(rndPlans)}`);
     const mappedPlans = rndPlans
       .flatMap((plan) => this.membershipMap.filter((m) => m.rndId === plan))
       .filter((p) => p !== null);
