@@ -330,21 +330,14 @@ let UserService = UserService_1 = class UserService {
         const parts = user.name.trim().split(' ');
         const firstName = parts[0];
         const lastName = parts.slice(1).join(' ');
+        if (!user.email) {
+            this.logger.warn(`User ${user._id} has no email, skipping`);
+            return;
+        }
         let uuser = await this.unifyService.getUserByEmail(user.email);
-        if (uuser) {
-            this.logger.log('User exists');
-        }
-        else {
-            const newUser = {
-                first_name: firstName,
-                last_name: lastName,
-                user_email: user.email,
-            };
-            uuser = await this.unifyService.createUser(newUser);
-        }
         this.logger.log('Check membership');
         const rndMemberships = await this.rndService.getUserMemberships(user._id);
-        this.logger.log(`Found rnd memberships ${JSON.stringify(rndMemberships)}`);
+        this.logger.log(`Fetch rnd memberships ${JSON.stringify(rndMemberships)}`);
         const rndPlans = Array.from(new Set(rndMemberships?.map((m) => m.plan)));
         this.logger.log(`Found rnd plans ${JSON.stringify(rndPlans)}`);
         const mappedPlans = rndPlans
@@ -355,12 +348,23 @@ let UserService = UserService_1 = class UserService {
         this.logger.log('Update plans');
         this.logger.log(`RND: ${JSON.stringify(mappedUPlanIds, null, 2)}`);
         this.logger.log(`Unify: ${JSON.stringify(uuser?.access_policy_ids, null, 2)}`);
-        console.log(uuser, mappedUPlanIds, mappedUPlanIds.length > 0);
-        if (uuser &&
-            mappedUPlanIds &&
-            mappedUPlanIds.length > 0 &&
-            JSON.stringify(mappedUPlanIds) !== JSON.stringify(uuser.access_policy_ids)) {
-            await this.unifyService.assignUserAccessPolicy(uuser?.id, mappedUPlanIds);
+        if (mappedUPlanIds && mappedUPlanIds.length > 0) {
+            if (!uuser) {
+                const newUser = {
+                    first_name: firstName,
+                    last_name: lastName,
+                    user_email: user.email,
+                };
+                uuser = await this.unifyService.createUser(newUser);
+            }
+            else {
+                this.logger.log('User exists');
+            }
+            if (uuser &&
+                JSON.stringify(mappedUPlanIds) !==
+                    JSON.stringify(uuser?.access_policy_ids)) {
+                await this.unifyService.assignUserAccessPolicy(uuser?.id, mappedUPlanIds);
+            }
         }
         else {
             this.logger.log('Plans are the same no update needed');
