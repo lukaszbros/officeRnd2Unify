@@ -339,7 +339,7 @@ let UserService = UserService_1 = class UserService {
         const rndMemberships = await this.rndService.getUserMemberships(user._id);
         this.logger.log(`Fetch rnd memberships ${JSON.stringify(rndMemberships)}`);
         const rndPlans = Array.from(new Set(rndMemberships?.map((m) => m.plan)));
-        this.logger.log(`Found rnd plans ${JSON.stringify(rndPlans)}`);
+        this.logger.log(`Found rnd plans ${JSON.stringify(rndPlans)} ${JSON.stringify(this.membershipMap, null, 2)}`);
         const mappedPlans = rndPlans
             .flatMap((plan) => this.membershipMap.filter((m) => m.rndId === plan))
             .filter((p) => p !== null);
@@ -363,6 +363,7 @@ let UserService = UserService_1 = class UserService {
             if (uuser &&
                 JSON.stringify(mappedUPlanIds) !==
                     JSON.stringify(uuser?.access_policy_ids)) {
+                this.logger.log('Updating user plans');
                 await this.unifyService.assignUserAccessPolicy(uuser?.id, mappedUPlanIds);
             }
         }
