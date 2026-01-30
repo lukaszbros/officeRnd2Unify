@@ -89,6 +89,8 @@ export class UserService {
           uuser?.id,
           mappedUPlanIds,
         );
+      } else {
+        this.logger.log('Plans are the same no update needed');
       }
     } else {
       this.logger.log('Plans are the same no update needed');
